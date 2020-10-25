@@ -1,5 +1,5 @@
 #include "LedSequence.h"
-  
+
 LedSequence::LedSequence(size_t ledCount, size_t frameCount, const uint32_t *colors, uint16_t frameDuration, bool repeat, bool copyBuffer) :
     _ledCount(ledCount),
     _frameCount(frameCount),

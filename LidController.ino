@@ -61,7 +61,6 @@ void loop() {
   listenForSerial();
   if (Serial.available()) {
     char character = Serial.read();
-    
     if (character == 's' || character == 'S') {
       ledSequenceController.stopPlaying();
     } else if (character >= '0' && character <= '2') {

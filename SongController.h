@@ -16,7 +16,7 @@ public:
   void playSong(const Song *song);
   void stopPlaying();
   bool isPlaying() const { return _playingSong != NULL; };
- 
+
 private:
   unsigned char _pin;
   const Song *_playingSong;

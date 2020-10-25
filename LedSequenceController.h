@@ -17,7 +17,7 @@ public:
   void playLedSequence(const LedSequence *sequence);
   void stopPlaying();
   bool isPlaying() const { return _playingSequence != NULL; };
- 
+
 private:
   Adafruit_NeoPixel *_neoPixel;
   const LedSequence *_playingSequence;

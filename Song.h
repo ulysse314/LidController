@@ -101,7 +101,7 @@ public:
 
   Song(Tempo tempo, size_t noteCount, const uint8_t *notes, bool copyBuffer);
   ~Song();
- 
+
   uint16_t tempo() const { return _tempo; };
   size_t noteCount() const { return _noteCount; };
   uint16_t frequencyAtIndex(size_t index) const;
