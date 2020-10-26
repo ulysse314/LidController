@@ -45,7 +45,7 @@ LedSequenceList::~LedSequenceList() {
 
 void LedSequenceList::begin() {
   empty();
-  _ledSequenceCount = 2;
+  _ledSequenceCount = 3;
   _ledSequences = (LedSequence **)calloc(_ledSequenceCount, sizeof(*_ledSequences));
   _ledSequences[0] = new LedSequence(4, sizeof(startSequence) / sizeof(*startSequence) / 4, startSequence, 100, false, false);
   _ledSequences[1] = new LedSequence(4, sizeof(ledSequence1) / sizeof(*ledSequence1) / 4, ledSequence1, 500, false, false);
