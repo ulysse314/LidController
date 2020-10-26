@@ -16,6 +16,13 @@
 
 #define PIEZO_PIN     8
 
+// Command list:
+// PS1: Play song with index 1, response '+' or '-'
+// SS: Stop playing song, response '+' or '-'
+// PL0: Play led sequence with index 0, response '+' or '-'
+// SL: Stop playing led sequence, response '+' or '-'
+// V: Get current version. response 2 chars in binary
+
 LedSequenceController ledSequenceController(NEOPIX_COUNT, NEOPIX_PIN);
 LedSequenceList ledSequenceList;
 SongController songController(PIEZO_PIN);
@@ -101,7 +108,12 @@ String processCommand(String command) {
     }
     return "-";
   } else if (command.startsWith("V")) {
-    return String(LidVersion);
+    String result;
+    if (LidVersion < 16) {
+      result += '0';
+    }
+    result += String((LidVersion & 0xFF), HEX);
+    return result;
   }
   return "-";
 }
